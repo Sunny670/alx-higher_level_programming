@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-if__name__ == "__main__":
+if __name__ == "__main__":
     """Handle basic arithmetic operations."""
-    form calculator_1 import add, sub, mul, div
+    from calculator_1 import add, sub, mul, div
     import sys
     if len(sys.argv) - 1 != 3:
         print("usage: ./100-my_calculator.py<a><operatoor><b>")
