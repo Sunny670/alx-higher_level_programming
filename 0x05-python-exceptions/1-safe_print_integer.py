@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-def sa_print_integer(value):
-    """Print an integer with "{:d}".fomart().
+def safe_print_integer(value):
+    """Print an integer with "{:d}".format().
     Args:
         value (int): The integer to print.
     Returns:
-        If a TypeError of Va;ueError occurs -False.
-        Otherwise -True.
+        If a TypeError or ValueError occurs - False.
+        Otherwise - True.
     """
     try:
         print("{:d}".format(value))
