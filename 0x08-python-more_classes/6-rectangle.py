@@ -117,7 +117,8 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Returns a string representation of the rectangle that can be used to create a new instance.
+        Returns a string representation of the rectangle that
+        can be used to create a new instance.
 
         Returns:
             A string representation of the rectangle.
