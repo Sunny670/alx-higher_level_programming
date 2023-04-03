@@ -1,9 +1,9 @@
 class Rectangle:
     """Rectangle class to represent a rectangle."""
-    
+
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
-        
+
         Args:
             width (int): The width of the new rectangle. Defaults to 0.
             height (int): The height of the new rectangle. Defaults to 0.
@@ -19,10 +19,8 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Set the width of the Rectangle.
-        
         Args:
-            value (int): The new width value.
-        
+            value (int): The new width value
         Raises:
             TypeError: If the value is not an integer.
             ValueError: If the value is less than 0.
@@ -41,10 +39,10 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """Set the height of the Rectangle.
-        
+
         Args:
             value (int): The new height value.
-        
+
         Raises:
             TypeError: If the value is not an integer.
             ValueError: If the value is less than 0.
@@ -61,7 +59,7 @@ class Rectangle:
 
     def perimeter(self):
         """Return the perimeter of the Rectangle.
-        
+
         If either width or height is 0, the perimeter is 0.
         """
         if self.__width == 0 or self.__height == 0:
