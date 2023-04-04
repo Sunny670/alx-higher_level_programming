@@ -40,8 +40,9 @@ def get_solution(board):
 def xout(board, row, col):
     """X out spots on a chessboard.
     This function marks spots on a chessboard where non-attacking queens can no
-    longer be placed with an 'X'. It takes the current board represented as a list
-    of lists, and the row and column where the last queen was placed as arguments.
+    longer be placed with an 'X'. It takes the current board represented as
+    a list of lists, and the row and column where the last queen was placed
+    as arguments.
     Args:
         board (list): The current working chessboard.
         row (int): The row where a queen was last played.
