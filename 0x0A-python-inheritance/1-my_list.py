@@ -7,8 +7,8 @@ class MyList(list):
     """subclass list."""
     def __init__(self):
         """object being initialized"""
-        super().__init_()
-        
+        super().__init__()
+
     def print_sorted(self):
         """Prints sorted ascending order list."""
         print(sorted(self))
