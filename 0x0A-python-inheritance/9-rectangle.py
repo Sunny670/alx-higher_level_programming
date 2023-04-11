@@ -4,6 +4,7 @@
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """Importing function from task 7"""
 
+
 class Rectangle(BaseGeometry):
     """A representation of a rectangle."""
 
@@ -20,4 +21,4 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """Returns  representation of Rectangle."""
-        return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height) 
+        return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
