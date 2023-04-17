@@ -22,7 +22,7 @@ class TestBase_instantiation(unittest.TestCase):
         b2 = Base()
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 2)
-        
+
     def test_nb_instances_after_unique_id(self):
         b1 = Base()
         b2 = Base(12)
@@ -52,7 +52,7 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_bool_id(self):
         self.assertEqual(True, Base(True).id)
-        
+
     def test_None_id(self):
         b1 = Base(None)
         b2 = Base(None)
@@ -170,6 +170,7 @@ class TestBase_save_to_file(unittest.TestCase):
         Square.save_to_file([s])
         with open("Square.json", "r") as f:
             self.assertTrue(len(f.read()) == 39)
+
     @classmethod
     def tearDown(self):
         """Delete any created files."""
@@ -199,7 +200,6 @@ class TestBase_save_to_file(unittest.TestCase):
         with open("Base.json", "r") as f:
             self.assertTrue(len(f.read()) == 39)
 
-    
     def test_save_to_file_None(self):
         Square.save_to_file(None)
         with open("Square.json", "r") as f:
@@ -228,7 +228,7 @@ class TestBase_from_json_string(unittest.TestCase):
     def test_from_json_string_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.from_json_string([], 1)
-   
+
     def test_from_json_string_two_rectangles(self):
         list_input = [
             {"id": 89, "width": 10, "height": 4, "x": 7, "y": 8},
@@ -264,7 +264,7 @@ class TestBase_from_json_string(unittest.TestCase):
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list_input, list_output)
-  
+
     def test_from_json_string_None(self):
         self.assertEqual([], Base.from_json_string(None))
 
@@ -272,11 +272,8 @@ class TestBase_from_json_string(unittest.TestCase):
         self.assertEqual([], Base.from_json_string("[]"))
 
 
-
 class TestBase_create(unittest.TestCase):
     """Testing create method of Base class."""
-
-    
 
     def test_create_square_original(self):
         s1 = Square(3, 5, 1, 7)
@@ -301,8 +298,7 @@ class TestBase_create(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertNotEqual(s1, s2)
-    
-    
+
 
 class TestBase_load_from_file(unittest.TestCase):
     """Testing load_from_file_method of Base class."""
@@ -463,7 +459,6 @@ class TestBase_load_from_file_csv(unittest.TestCase):
         except IOError:
             pass
 
-    
     def test_load_from_file_csv_rectangle_types(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)
@@ -499,6 +494,7 @@ class TestBase_load_from_file_csv(unittest.TestCase):
     def test_load_from_file_csv_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.load_from_file_csv([], 1)
+
     def test_load_from_file_csv_first_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 2)

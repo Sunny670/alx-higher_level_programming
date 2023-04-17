@@ -486,7 +486,7 @@ class TestSquare_update_args(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             s.update(89, 1, "invalid", "invalid")
-            
+
     def test_update_args_size_negative(self):
         s = Square(10, 10, 10, 10)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
@@ -511,7 +511,6 @@ class TestSquare_update_args(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             s.update(98, 1, 2, -4)
-
 
 
 class TestSquare_update_kwargs(unittest.TestCase):
@@ -615,6 +614,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             s.update(y=-5)
 
+
 class TestSquare_to_dictionary(unittest.TestCase):
     """Unittests for testing to_dictionary method of the Square class."""
 
@@ -633,6 +633,7 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s = Square(10, 2, 1, 1)
         correct = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
         self.assertDictEqual(correct, s.to_dictionary())
+
 
 if __name__ == "__main__":
     unittest.main()

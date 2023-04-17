@@ -91,11 +91,12 @@ class TestRectangle_instantiation(unittest.TestCase):
     def test_height_getter(self):
         r = Rectangle(5, 7, 7, 5, 1)
         self.assertEqual(7, r.height)
-        
+
     def test_y_setter(self):
         r = Rectangle(5, 7, 7, 5, 1)
         r.y = 10
         self.assertEqual(10, r.y)
+
 
 class TestRectangle_width(unittest.TestCase):
     """Testing initialization of Rectangle width attribute."""
@@ -170,6 +171,7 @@ class TestRectangle_width(unittest.TestCase):
     def test_nan_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle(float('nan'), 2)
+
 
 class TestRectangle_height(unittest.TestCase):
     """Testing initialization of Rectangle height attribute."""
@@ -661,7 +663,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
         r = Rectangle(10, 10, 10, 10, 10)
         r.update(y=5, x=8, id=99, width=1, height=2)
         self.assertEqual("[Rectangle] (99) 8/5 - 1/2", str(r))
-    
+
     def test_update_kwargs_one(self):
         r = Rectangle(10, 10, 10, 10, 10)
         r.update(id=1)
