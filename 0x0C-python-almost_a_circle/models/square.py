@@ -57,7 +57,7 @@ class Square(Rectangle):
         elif kwargs and len(kwargs) != 0:
             for a, b in kwargs.items():
                 if a == "id":
-                    if v is None:
+                    if b is None:
                         self.__init__(self.size, self.x, self.y)
                     else:
                         self.id = b
