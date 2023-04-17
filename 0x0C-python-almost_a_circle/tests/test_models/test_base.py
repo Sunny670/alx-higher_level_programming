@@ -22,6 +22,7 @@ class TestBase_instantiation(unittest.TestCase):
         b2 = Base()
         b3 = Base()
         self.assertEqual(b1.id, b3.id - 2)
+        
     def test_nb_instances_after_unique_id(self):
         b1 = Base()
         b2 = Base(12)
@@ -51,6 +52,7 @@ class TestBase_instantiation(unittest.TestCase):
 
     def test_bool_id(self):
         self.assertEqual(True, Base(True).id)
+        
     def test_None_id(self):
         b1 = Base(None)
         b2 = Base(None)
@@ -97,7 +99,6 @@ class TestBase_instantiation(unittest.TestCase):
 class TestBase_to_json_string(unittest.TestCase):
     """Testing to_json_string method of Base class."""
 
-    
     def test_to_json_string_empty_list(self):
         self.assertEqual("[]", Base.to_json_string([]))
 
@@ -111,6 +112,7 @@ class TestBase_to_json_string(unittest.TestCase):
     def test_to_json_string_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.to_json_string([], 1)
+
     def test_to_json_string_rectangle_type(self):
         r = Rectangle(10, 7, 2, 8, 6)
         self.assertEqual(str, type(Base.to_json_string([r.to_dictionary()])))
@@ -149,7 +151,7 @@ class TestBase_save_to_file(unittest.TestCase):
         Square.save_to_file([s])
         with open("Square.json", "r") as f:
             self.assertTrue(len(f.read()) == 39)
-  
+
     def test_save_to_file_one_rectangle(self):
         r = Rectangle(10, 7, 2, 8, 5)
         Rectangle.save_to_file([r])
@@ -168,7 +170,7 @@ class TestBase_save_to_file(unittest.TestCase):
         Square.save_to_file([s])
         with open("Square.json", "r") as f:
             self.assertTrue(len(f.read()) == 39)
-      @classmethod
+    @classmethod
     def tearDown(self):
         """Delete any created files."""
         try:
